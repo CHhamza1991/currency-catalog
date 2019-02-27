@@ -1,0 +1,24 @@
+.footer {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    &__block {
+        height: 50px;
+        width: 100%;
+        background-color: #f44336;
+        font-family: WorkSans;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+        
+        p {
+            margin: 0px !important;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<section fxLayout="row" fxLayoutAlign="center center">
+  <h1 [ngStyle.xs]="{'font-size': '100%'}" [ngStyle.sm]="{'font-size': '200%'}" [ngStyle.md]="{'font-size': '250%'}"
+    [ngStyle.lg]="{'font-size': '300%'}">
+    Available currencies
+  </h1>
+</section>
+
+<app-filters></app-filters>
+
+<section *ngIf="chargement; else currencies" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner color="warn"></mat-spinner>
+</section>
+
+<ng-template #currencies>
+  <section class="cuurencies-block" fxLayout="row" fxLayoutAlign="center center" *ngIf="noResult; else results">
+    <p>
+      <span matBadge="!" matBadgeOverlap="false" matBadgeColor="warn">No currency found</span>
+    </p>
+  </section>
+  <ng-template #results>
+    <section class="cuurencies-block" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <div *ngFor="let currency of listcurrencies" class="currency-box" (click)="loadDetails(currency)" fxFlex.xs="50%"
+        fxFlex.sm="25%" fxFlex.md="25%" fxFlex.lg="16%">
+        <app-currency [currency]="currency"></app-currency>
+      </div>
+    </section>
+  </ng-template>
+</ng-template>

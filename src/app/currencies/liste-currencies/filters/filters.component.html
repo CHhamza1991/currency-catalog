@@ -1,0 +1,54 @@
+<section>
+  <form 
+      fxLayout.xs="column"
+      fxLayout.sm="column" 
+      fxLayout.md="row"
+      fxLayout.lg="row"
+      fxLayoutAlign="center center"
+      fxLayoutGap.xs="20px"
+      fxLayoutGap.sm="20px"
+      fxLayoutGap.md="30px"
+      fxLayoutGap.lg="30px"
+      [formGroup]="filtersFormGroup">
+
+      <mat-form-field>
+          <mat-select [placeholder]="'filter by'" [formControlName]="'filterCriteria'">
+              <mat-option
+                  *ngFor="let criteria of criterias"
+                  [value]="criteria.value">
+                  {{criteria.viewValue}}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+          <input
+              matInput 
+              placeholder="enter a value" 
+              [formControlName]="'filterValue'"
+              [ngClass]="{'disabled': !filtersFormGroup.valid}">
+      </mat-form-field>
+  
+      <section
+          fxLayout="row"
+          fxLayoutGap="30px">
+          <button
+              type="button"
+              [disabled]="!filtersFormGroup.valid"
+              [ngClass]="{'disabled': !filtersFormGroup.valid}"
+              (click)="filterCurrencies()"
+              class="filters__button-filtrer">
+              <mat-icon>search</mat-icon>
+          </button>
+      
+          <button
+              type="button"
+              (click)="reset()"
+              class="filters__button-reset">
+              <mat-icon>delete_outline</mat-icon>
+          </button>
+      </section>
+      
+  </form>
+</section>
+

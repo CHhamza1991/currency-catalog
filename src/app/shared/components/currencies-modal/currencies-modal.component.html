@@ -1,0 +1,38 @@
+<div 
+    mat-dialog-content
+    id="dialog-content"
+    class="dialog">
+    <div 
+        id="dialog-header" 
+        class="dialog__header {{ selectedModalType.class }}"
+        fxLayout="row" 
+        fxLayoutAlign="center center">
+        <mat-icon 
+          *ngIf="selectedModalType.class === 'success'" 
+          class="dialog__header__icon dialog__header__icon-success">check_circle_outline
+        </mat-icon>
+        <div 
+          *ngIf="selectedModalType.class === 'error'" 
+          class="dialog__header__icon">
+            <img src="assets/images/alert-circled.png"/>
+        </div>
+    </div>
+    <div id="dialog-body" class="dialog__body">
+        <p 
+          id="message" 
+          class="dialog__body__message"
+          [innerHTML]="modalMessage">
+        </p>
+    </div>
+</div>
+<div 
+    mat-dialog-actions
+    id="dialog-action"
+    class="action">
+    <button mat-button
+        class="btn btn-primary btn-primary-{{selectedModalType.class}} action__button"
+        (click)="quitter()">
+        {{ selectedModalType.action }}
+    </button>
+</div>
+

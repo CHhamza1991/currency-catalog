@@ -1,0 +1,36 @@
+<section class="currency-link" fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="start center">
+  <a (click)="backToCurrencies()" fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="start center">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <span class="currency-link__navigation">Back to currencies</span>
+  </a>
+</section>
+<section *ngIf="chargement; else currencyDetailsSection" fxLayout="column" fxLayoutAlign="center center">
+<mat-spinner color="warn"></mat-spinner>
+</section>
+<ng-template #currencyDetailsSection>
+<section class="currency-details" fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex.xs="100%" fxFlex="400px" class="mat-elevation-z8">
+    <mat-card-title fxLayoutAlign="center">
+      {{ currencyDetails.id ? currencyDetails.id : '----'}}
+    </mat-card-title>
+    <mat-card-subtitle fxLayoutAlign="center">
+     <u>Code</u> : {{ currencyDetails.attributes.code ? currencyDetails.attributes.code : '----'}}
+    </mat-card-subtitle>
+    <mat-card-subtitle fxLayoutAlign="center">
+      <u>Name</u> : {{ currencyDetails.attributes.name ? currencyDetails.attributes.name : '----'}}
+    </mat-card-subtitle>
+    <mat-card-subtitle fxLayoutAlign="center">
+      <u>Currency-type</u> : {{ currencyDetails.attributes.currency_type ? currencyDetails.attributes.currency_type :
+      '----'}}
+    </mat-card-subtitle>
+    <mat-card-subtitle fxLayoutAlign="center">
+      <u>Code_iso_numeric3</u> : {{ currencyDetails.attributes.code_iso_numeric3 ?
+      currencyDetails.attributes.code_iso_numeric3 : '----'}}
+    </mat-card-subtitle>
+    <mat-card-subtitle fxLayoutAlign="center">
+      <u>Code_iso_alpha3</u> : {{ currencyDetails.attributes.code_iso_alpha3 ? currencyDetails.attributes.code_iso_alpha3 :
+      '----'}}
+    </mat-card-subtitle>
+  </mat-card>
+</section>
+</ng-template>

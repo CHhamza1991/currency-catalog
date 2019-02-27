@@ -1,0 +1,9 @@
+.cuurencies-block {
+  margin-bottom: 50px;
+
+  .currency-box:hover {
+    position: relative;
+    top: -10px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,19 @@
+button {
+  text-decoration: none;
+  color: #f44336;
+  background-color: #ffffff;
+  border: 1px solid #f44336;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  color: #f44336;
+  opacity: 0.5;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

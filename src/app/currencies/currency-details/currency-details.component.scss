@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  color: #f44336;
+  opacity: 0.5;
+}
+
+.currency-details {
+  padding: 30px;
+}
+
+.currency-link {
+  padding: 20px;
+
+  &__navigation {
+    padding: 10px;
+  }
+}
